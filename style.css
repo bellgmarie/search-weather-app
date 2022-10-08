@@ -75,9 +75,7 @@ row {
   border: 10px solid rgb(255, 229, 159);
   border-radius: 10px;
 }
-.sign {
-  text-align: center;
-}
+
 .logo {
   display: block;
   margin: 30px auto;
@@ -123,4 +121,7 @@ row {
   margin-left: 47px;
   margin-bottom: 0;
   margin-top: 17px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  display: block;
 }
