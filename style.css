@@ -2,8 +2,6 @@ html {
   height: 100%;
 }
 body {
-  height: 100%;
-  margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: sans-serif;
@@ -36,7 +34,16 @@ body {
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EBD2D4", endColorstr="#EBCFD0", GradientType=1 );
 }
-
+* {
+  box-sizing: border-box;
+}
+div {
+  display: block;
+}
+.container {
+  display: block;
+  margin: 0 auto;
+}
 h1 {
   color: rgb(255, 245, 103);
   text-transform: capitalize;
@@ -55,10 +62,7 @@ h3 {
 row {
   margin: 50px;
 }
-.container {
-  display: block;
-  margin: 0 auto;
-}
+
 .wholeApp {
   background: rgb(133, 149, 225)
     radial-gradient(
@@ -112,6 +116,8 @@ row {
 }
 #button {
   width: 147px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 #search-box {
   width: 279px;
