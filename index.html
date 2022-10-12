@@ -13,17 +13,14 @@
       crossorigin="anonymous"
     />
 
-    <script
-      src="https://kit.fontawesome.com/e3785263b1.js"
-      crossorigin="anonymous"
-    ></script>
+    
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
       <div class="wholeApp" id="mainApp">
         <div class="row" id="topRow">
-          <h1 class="col-8" id="cityName">City Name!</h1>
+          <h1 class="col-8" id="cityName">New York</h1>
           <span class="col-3" > 
             <h3 class="dateTime">10:45 PM <br/> Aug. 23rd
             <br />Sunday</h3>
@@ -31,13 +28,15 @@
           </span>
         </div>
         <div class="row" id="middleRow">
-          <h2 class="col-5">image will go here</h2>
-          <h3 class="col-2" id="feelsTemp">feels like 66!</h3>
+          <h2 class="col-3"> <img id="image" src="https://www.onlygfx.com/wp-content/uploads/2021/08/sun-face-tattoo-5092.svg" alt=""></h2>
+        
           <h2 class="col-4" id="temperature">-</h2>
           <span class="col-1" id="tempUnit">
             <a href="#" id="farenheit">F°</a>
               <a href="#" id="celsius">C°</a>
-          </span>
+          </span>  <ul class="col-3" id="feelsTemp">
+            <li>Precipitation: 15%</li> <li>Humidity: 80%</li> <li>Wind: 10mph</li>
+            </ul>
         </div>
        
         <h1 class="col-6" id="temperature-description">^^^^^</h1>
@@ -57,9 +56,9 @@
           
           </form>
           
-        </div>
+        
       </div>
-      <p id="sign"> <a href="https://github.com/wecodeschool/my-awsome-app" target="_blank">Open-source code</a> by Bell M</p>
+     </div> <p id="sign"> <a href="https://github.com/wecodeschool/my-awsome-app" target="_blank">Open-source code</a> by Bell M</p>
     </div>
     <script src="script.js"></script>
   </body>
