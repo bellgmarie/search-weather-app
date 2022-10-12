@@ -28,30 +28,31 @@
           </span>
         </div>
         <div class="row" id="middleRow">
-          <h2 class="col-3"> <img id="image" src="https://www.onlygfx.com/wp-content/uploads/2021/08/sun-face-tattoo-5092.svg" alt=""></h2>
+          
+          <h2 class="col-3">
+             <img id="image" src="https://www.onlygfx.com/wp-content/uploads/2021/08/sun-face-tattoo-5092.svg" alt=""></h2>
         
-          <h2 class="col-4" id="temperature">-</h2>
-          <span class="col-1" id="tempUnit">
-            <a href="#" id="farenheit">F°</a>
-              <a href="#" id="celsius">C°</a>
+          <h2 class="col-2" id="temperature">65</h2>
+          <span class="col-3" id="tempUnit">
+           <a href="#" id="farenheit">°F </a> |<a href="#" id="celsius">°C</a>
           </span>  <ul class="col-3" id="feelsTemp">
             <li>Precipitation: 15%</li> <li>Humidity: 80%</li> <li>Wind: 10mph</li>
             </ul>
         </div>
        
-        <h1 class="col-6" id="temperature-description">^^^^^</h1>
+        <h1 class="col-6" id="temperature-description">Cloudy</h1>
        </h1>
        <div class="row" id="lastRow">
-        <form id="search-form" class="col-7">
-          <input id="button" type="submit" value="Search" />
+        <form id="search-form" >
+          <input id="button" type="submit" value="Search" class="col-5" />
           <input
             type="text"
             placeholder="Search for a city...  "
             autocomplete="off"
             autofocus="off"
-            class="citySearch"
+            class="citySearch form-control col-7"
             id="search-box"
-            class="form-control"
+            
           />
           
           </form>

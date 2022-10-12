@@ -71,14 +71,14 @@ row {
   margin: 50px;
 }
 .container {
-}
-.wholeApp {
   max-width: 760px;
   margin: 60px auto;
+}
+.wholeApp {
   padding: 20px;
   margin-top: 100px;
-  margin-left: 250px;
-  margin-right: 250px;
+  margin-left: 10px;
+  margin-right: 10px;
   background: rgb(133, 149, 225)
     radial-gradient(
       circle,
@@ -103,24 +103,30 @@ row {
   margin-right: -49px;
   margin-top: 18px;
 }
+.form-control {
+  display: inline;
+}
 #cityName {
   text-align: left;
-  margin-top: 50px;
+  margin-top: 1px;
   margin-left: 5px;
   font-size: 100px;
+  line-height: 83px;
 }
 #temperature {
   font-size: 100px;
+  line-height: 162px;
 }
 #tempUnit {
-  margin-top: 35px;
+  font-size: 32px;
+  margin-top: 30px;
 }
 #image {
   width: 200px;
   height: auto;
 }
 #topRow {
-  margin-bottom: 60px;
+  margin-bottom: 15px;
 }
 #temperature-description {
   text-align: left;
