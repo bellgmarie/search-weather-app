@@ -62,6 +62,7 @@ li {
   font-size: 29px;
   font-weight: 100px;
   line-height: 29px;
+  text-transform: capitalize;
 }
 ul {
   margin: 0;
