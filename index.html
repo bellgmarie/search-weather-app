@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     />
 
-    
+    <script src="https://kit.fontawesome.com/e3785263b1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body> <div class="totalApp">
@@ -36,10 +36,10 @@
         <div class="row" id="middleRow">
           
           <h2 class="col-3">
-             <img id="image" src="https://www.onlygfx.com/wp-content/uploads/2021/08/sun-face-tattoo-5092.svg" alt=""></h2>
-        
-          <h2 class="col-2" id="temperature">65</h2>
-          <span class="col-3" id="tempUnit">
+             <i id="image" class="fa-regular fa-sun"></i>
+            
+          <h2 class="col-3" id="temperature">65</h2>
+          <span class="col-2" id="tempUnit">
            <a href="#" id="farenheit">°F </a> |<a href="#" id="celsius">°C</a>
           </span>  <h1 class="col-4" id="temperature-description">Cloudy</h1> 
         </div>
@@ -58,7 +58,7 @@
             id="search-box"
             
           />
-          <button type="button" 
+          <button id="forecast" type="button" 
         data-bs-toggle="popover" data-bs-placement="top"
         data-bs-custom-class="custom-popover"
         data-bs-title="Custom popover"

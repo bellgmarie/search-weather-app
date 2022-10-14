@@ -38,6 +38,13 @@ let months = [
 let month = months[now.getMonth()];
 
 dateTime.innerHTML = `${day} <br /> ${month} ${date}, ${year}<br />${hour}:${minutes} o'clock`;
+//popovers
+const popoverTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="popover"]'
+);
+const popoverList = [...popoverTriggerList].map(
+  (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+);
 //SEARCH STUFF
 
 function defaultTemperature(response) {
