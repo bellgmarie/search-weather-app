@@ -16,16 +16,22 @@
     
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body> 
+  <body> <div class="totalApp">
+     <h1 class="col-12" id="cityName">Tokyo</h1>
     <div class="container">
       <div class="wholeApp" id="mainApp">
         <div class="row" id="topRow">
-          <h1 class="col-8" id="cityName">Tokyo</h1>
+         
           <span class="col-3" > 
             <h3 class="dateTime">10:45 PM <br/> Aug. 23rd
             <br />Sunday</h3>
             
           </span>
+          <span class="col-9" id="weatherAcc"> <ul id="feelsTemp">
+          
+            <li id="humid">Humidity: 80%</li> 
+            <li id="wind">Wind: 10mph</li>
+            </ul></span>
         </div>
         <div class="row" id="middleRow">
           
@@ -35,14 +41,10 @@
           <h2 class="col-2" id="temperature">65</h2>
           <span class="col-3" id="tempUnit">
            <a href="#" id="farenheit">°F </a> |<a href="#" id="celsius">°C</a>
-          </span>  <ul class="col-4" id="feelsTemp">
-            <li id="precip">Precipitation: 15%</li> 
-            <li id="humid">Humidity: 80%</li> 
-            <li id="wind">Wind: 10mph</li>
-            </ul>
+          </span>  <h1 class="col-4" id="temperature-description">Cloudy</h1> 
         </div>
        
-        <h1 class="col-6" id="temperature-description">Cloudy</h1>
+    
        </h1>
        <div class="row" id="lastRow">
         <form id="search-form" >
@@ -56,13 +58,20 @@
             id="search-box"
             
           />
-          
+          <button type="button" 
+        data-bs-toggle="popover" data-bs-placement="top"
+        data-bs-custom-class="custom-popover"
+        data-bs-title="Custom popover"
+        data-bs-content="This popover is themed via CSS variables.">
+  Custom popover
+</button>
           </form>
           
         
       </div>
-     </div> <p id="sign"> <a href="https://github.com/wecodeschool/my-awsome-app" target="_blank">Open-source code</a> by Bell M</p>
+     </div> <p id="sign"> <a href="https://github.com/bellgmarie/search-weather-app" target="_blank" class="openLink">Open-source code</a> by Bell M</p>
     </div>
+  </div>
     <script src="script.js"></script>
   </body>
 </html>

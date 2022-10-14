@@ -37,7 +37,7 @@ let months = [
 
 let month = months[now.getMonth()];
 
-dateTime.innerHTML = `${day} ${month} ${date}, ${year}<br />${hour}:${minutes}`;
+dateTime.innerHTML = `${day} <br /> ${month} ${date}, ${year}<br />${hour}:${minutes} o'clock`;
 //SEARCH STUFF
 
 function defaultTemperature(response) {

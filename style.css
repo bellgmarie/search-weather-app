@@ -41,7 +41,6 @@ div {
 }
 
 h1 {
-  color: rgb(255, 245, 103);
   text-transform: capitalize;
   text-align: left;
   font-weight: 900;
@@ -72,13 +71,18 @@ ul {
 row {
   margin: 50px;
 }
+
+.totalApp {
+  max-width: 760px;
+  margin: 60px auto;
+}
 .container {
   max-width: 760px;
   margin: 60px auto;
 }
 .wholeApp {
-  padding: 20px;
-  margin-top: 100px;
+  padding: 20px 20px 3px 20px;
+  margin-top: -61px;
   margin-left: 10px;
   margin-right: 10px;
   background: rgb(133, 149, 225)
@@ -91,7 +95,7 @@ row {
   box-shadow: 1px 1px 25px 20px rgba(149, 189, 255, 0.5);
 
   border: 5px solid rgb(255, 229, 159);
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 .logo {
@@ -101,20 +105,22 @@ row {
 }
 .dateTime {
   color: rgb(255, 245, 103);
-  font-size: 30px;
-  text-align: right;
+  font-size: 26px;
+  text-align: center;
   margin-right: -49px;
-  margin-top: 18px;
+  margin-top: 0px;
+  font-weight: 800;
 }
 .form-control {
   display: inline;
 }
 #cityName {
+  color: #ff6201;
   text-align: left;
   margin-top: 1px;
-  margin-left: 5px;
-  font-size: 100px;
-  line-height: 83px;
+  margin-left: 55px;
+  font-size: 80px;
+  line-height: 69px;
 }
 #temperature {
   font-size: 100px;
@@ -124,6 +130,14 @@ row {
   font-size: 32px;
   margin-top: 30px;
 }
+#feelsTemp {
+  color: rgb(255, 245, 103);
+  font-size: 26px;
+  text-align: right;
+  margin-right: 2px;
+  margin-top: -12px;
+  font-weight: 800;
+}
 #image {
   width: 200px;
   height: auto;
@@ -132,17 +146,22 @@ row {
   margin-bottom: 15px;
 }
 #temperature-description {
-  text-align: left;
+  color: rgb(255, 245, 103);
+  text-align: center;
+  margin-top: 20px;
 }
-
+#wind {
+  margin-top: -27px;
+}
+/*#weatherAcc {
+  margin-left: 10px;
+} */
 #search-form {
   margin-bottom: 10px;
   margin-left: 4px;
 }
 #button {
   width: 147px;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 #search-box {
   width: 279px;
