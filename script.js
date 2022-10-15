@@ -1,6 +1,5 @@
 //DATE CHANGE STUFF
-
-//popovers
+/*
 function trueTime(timestamp) {
   //calculate the date
   let date = new Date(timestamp);
@@ -9,11 +8,12 @@ function trueTime(timestamp) {
   if (hour > 12) {
     hour = hour - 12;
   }
+
   let minutes = date.getMinutes();
   if (minutes < 10) {
-    minutes = `0 + ${minutes}`;
+    minutes = `0${minutes}`;
   }
-  console.log(minutes);
+
   let months = [
     "Jan.",
     "Feb.",
@@ -41,9 +41,10 @@ function trueTime(timestamp) {
     "Saturday",
   ];
   let day = days[date.getDay()];
+
   let year = date.getFullYear();
   return `${day} <br /> ${month} ${dates}, ${year}<br />${hour}:${minutes} o'clock`;
-}
+} */
 //SEARCH STUFF
 
 function defaultTemperature(response) {
@@ -67,7 +68,9 @@ function defaultTemperature(response) {
 let apiKey = "c3a3993027e6129d50f3eb164a7e386a";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=${apiKey}&units=imperial`;
 axios.get(apiUrl).then(defaultTemperature);
-//
+
+// end default
+
 function weatherDescription(response) {
   console.log(response.data.name);
   let cityName = document.querySelector("#cityName");
@@ -82,6 +85,7 @@ function weatherDescription(response) {
   humidityPer.innerHTML =
     "Humidity: " + Math.round(response.data.main.humidity) + "%";
   weatherDescript.innerHTML = response.data.weather[0].description;
+  dateTime.innerHTML = trueTime(response.data.dt * 1000);
 }
 
 function search(event) {
