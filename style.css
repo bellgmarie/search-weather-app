@@ -102,15 +102,7 @@ row {
   margin: 30px auto;
   width: 150px;
 }
-.dateTime {
-  color: rgb(255, 245, 103);
-  font-size: 26px;
-  text-align: center;
-  margin-right: -182px;
-  margin-top: 0px;
-  font-weight: 800;
-  border-radius: 42px;
-}
+
 .form-control {
   display: block;
   width: 100%;
@@ -138,7 +130,15 @@ row {
   --bs-popover-body-padding-x: 1rem;
   --bs-popover-body-padding-y: 0.5rem;
 }
-
+#dateTime {
+  color: rgb(255, 245, 103);
+  font-size: 26px;
+  text-align: center;
+  margin-right: -182px;
+  margin-top: 0px;
+  font-weight: 800;
+  border-radius: 42px;
+}
 #button {
   width: 110px;
   margin-left: 11px;

@@ -1,45 +1,49 @@
 //DATE CHANGE STUFF
-let now = new Date();
-console.log(now.getDate());
-let dateTime = document.querySelector(".dateTime");
-let date = now.getDate();
-let hour = now.getHours();
-let minutes = now.getMinutes();
-minutes = minutes <= 9 ? "0" + minutes : minutes;
-console.log(minutes);
-let year = now.getFullYear();
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-
-let months = [
-  "Jan.",
-  "Feb.",
-  "Mar.",
-  "Apr.",
-  "May.",
-  "Jun.",
-  "Jul.",
-  "Aug.",
-  "Sept.",
-  "Oct.",
-  "Nov.",
-  "Dec.",
-];
-
-let month = months[now.getMonth()];
-
-dateTime.innerHTML = `${day} <br /> ${month} ${date}, ${year}<br />${hour}:${minutes} o'clock`;
 //popovers
+function trueTime(timestamp) {
+  //calculate the date
+  let date = new Date(timestamp);
+  let dates = date.getDate();
+  let hour = date.getHours();
+  if (hour > 12) {
+    hour = hour - 12;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0 + ${minutes}`;
+  }
+  console.log(minutes);
+  let months = [
+    "Jan.",
+    "Feb.",
+    "Mar.",
+    "Apr.",
+    "May.",
+    "Jun.",
+    "Jul.",
+    "Aug.",
+    "Sept.",
+    "Oct.",
+    "Nov.",
+    "Dec.",
+  ];
 
+  let month = months[date.getMonth()];
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  let year = date.getFullYear();
+  return `${day} <br /> ${month} ${dates}, ${year}<br />${hour}:${minutes} o'clock`;
+}
 //SEARCH STUFF
 
 function defaultTemperature(response) {
@@ -49,6 +53,7 @@ function defaultTemperature(response) {
   let windSpeed = document.querySelector("#wind");
   let humidityPer = document.querySelector("#humid");
   let weatherDescript = document.querySelector("#temperature-description");
+  let dateTime = document.querySelector("#dateTime");
 
   cityName.innerHTML = response.data.name;
   temperatureNumber.innerHTML = Math.round(response.data.main.temp);
@@ -56,6 +61,7 @@ function defaultTemperature(response) {
   humidityPer.innerHTML =
     "Humidity: " + Math.round(response.data.main.humidity) + "%";
   weatherDescript.innerHTML = response.data.weather[0].description;
+  dateTime.innerHTML = trueTime(response.data.dt * 1000);
 }
 
 let apiKey = "c3a3993027e6129d50f3eb164a7e386a";
