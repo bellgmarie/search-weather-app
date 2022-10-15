@@ -91,10 +91,9 @@ row {
       rgba(133, 149, 225, 0.8911939775910365) 72%,
       rgba(133, 174, 211, 1) 98%
     );
-
   box-shadow: 1px 1px 25px 20px rgba(149, 189, 255, 0.5);
 
-  border: 5px solid rgb(255, 229, 159);
+  border: 3px solid rgb(214 223 251);
   border-radius: 50px;
 }
 
@@ -144,8 +143,10 @@ row {
   width: 110px;
   margin-left: 11px;
   cursor: pointer;
-  border-radius: 16px;
-  padding: 1px 5px 1px 5px;
+  background: #ff690c;
+  margin-left: 0px;
+  border-radius: -16px;
+  padding: 3px 12px 3px 12px;
   border: 1px solid rgba(149, 189, 255, 0.5);
 }
 #cityName {
@@ -205,8 +206,8 @@ row {
 }
 #forecast {
   margin-left: 0px;
-  border-radius: 16px;
-  padding: 5px 12px 5px 12px;
+  border-radius: -16px;
+  padding: 3px 12px 3px 12px;
   border: 1px solid rgba(149, 189, 255, 0.5);
 }
 #wind {
@@ -217,11 +218,9 @@ row {
 } */
 #search-form {
   margin-bottom: 10px;
-  margin-left: -3px;
+  text-align: center;
 }
-#button {
-  width: 147px;
-}
+
 #search-box {
   width: 335px;
 }

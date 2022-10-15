@@ -39,26 +39,23 @@ let month = months[now.getMonth()];
 
 dateTime.innerHTML = `${day} <br /> ${month} ${date}, ${year}<br />${hour}:${minutes} o'clock`;
 //popovers
-const popoverTriggerList = document.querySelectorAll(
-  '[data-bs-toggle="popover"]'
-);
-const popoverList = [...popoverTriggerList].map(
-  (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
-);
+
 //SEARCH STUFF
 
 function defaultTemperature(response) {
   console.log(response.data);
-  document.querySelector("#cityName").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#wind").innerHTML =
-    "Wind: " + Math.round(response.data.wind.speed) + "mph";
-  document.querySelector("#humid").innerHTML =
+  let cityName = document.querySelector("#cityName");
+  let temperatureNumber = document.querySelector("#temperature");
+  let windSpeed = document.querySelector("#wind");
+  let humidityPer = document.querySelector("#humid");
+  let weatherDescript = document.querySelector("#temperature-description");
+
+  cityName.innerHTML = response.data.name;
+  temperatureNumber.innerHTML = Math.round(response.data.main.temp);
+  windSpeed.innerHTML = "Wind: " + Math.round(response.data.wind.speed) + "mph";
+  humidityPer.innerHTML =
     "Humidity: " + Math.round(response.data.main.humidity) + "%";
-  document.querySelector("#temperature-description").innerHTML =
-    response.data.weather[0].description;
+  weatherDescript.innerHTML = response.data.weather[0].description;
 }
 
 let apiKey = "c3a3993027e6129d50f3eb164a7e386a";
