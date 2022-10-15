@@ -64,12 +64,18 @@ axios.get(apiUrl).then(defaultTemperature);
 //
 function weatherDescription(response) {
   console.log(response.data.name);
-  document.querySelector("#cityName").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#temperature-description").innerHTML =
-    response.data.weather[0].description;
+  let cityName = document.querySelector("#cityName");
+  let temperatureNumber = document.querySelector("#temperature");
+  let windSpeed = document.querySelector("#wind");
+  let humidityPer = document.querySelector("#humid");
+  let weatherDescript = document.querySelector("#temperature-description");
+
+  cityName.innerHTML = response.data.name;
+  temperatureNumber.innerHTML = Math.round(response.data.main.temp);
+  windSpeed.innerHTML = "Wind: " + Math.round(response.data.wind.speed) + "mph";
+  humidityPer.innerHTML =
+    "Humidity: " + Math.round(response.data.main.humidity) + "%";
+  weatherDescript.innerHTML = response.data.weather[0].description;
 }
 
 function search(event) {
