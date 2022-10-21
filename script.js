@@ -1,5 +1,4 @@
-//DATE CHANGE STUFF
-/*
+//DATE CHANGE STUFF*
 function trueTime(timestamp) {
   //calculate the date
   let date = new Date(timestamp);
@@ -44,7 +43,8 @@ function trueTime(timestamp) {
 
   let year = date.getFullYear();
   return `${day} <br /> ${month} ${dates}, ${year}<br />${hour}:${minutes} o'clock`;
-} */
+}
+
 //SEARCH STUFF
 
 function defaultTemperature(response) {
@@ -56,17 +56,18 @@ function defaultTemperature(response) {
   let weatherDescript = document.querySelector("#temperature-description");
   let dateTime = document.querySelector("#dateTime");
 
-  cityName.innerHTML = response.data.name;
-  temperatureNumber.innerHTML = Math.round(response.data.main.temp);
+  cityName.innerHTML = response.data.city;
+  temperatureNumber.innerHTML = Math.round(response.data.temperature.current);
   windSpeed.innerHTML = "Wind: " + Math.round(response.data.wind.speed) + "mph";
   humidityPer.innerHTML =
-    "Humidity: " + Math.round(response.data.main.humidity) + "%";
-  weatherDescript.innerHTML = response.data.weather[0].description;
-  dateTime.innerHTML = trueTime(response.data.dt * 1000);
+    "Humidity: " + Math.round(response.data.temperature.humidity) + "%";
+  weatherDescript.innerHTML = response.data.condition.description;
+  console.log(response.data.time);
+  dateTime.innerHTML = trueTime(response.data.time * 1000);
 }
 
-let apiKey = "c3a3993027e6129d50f3eb164a7e386a";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=${apiKey}&units=imperial`;
+let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Tokyo&key=${apiKey}&units=imperial`;
 axios.get(apiUrl).then(defaultTemperature);
 
 // end default
@@ -78,21 +79,21 @@ function weatherDescription(response) {
   let windSpeed = document.querySelector("#wind");
   let humidityPer = document.querySelector("#humid");
   let weatherDescript = document.querySelector("#temperature-description");
-
-  cityName.innerHTML = response.data.name;
-  temperatureNumber.innerHTML = Math.round(response.data.main.temp);
+  cityName.innerHTML = response.data.city;
+  temperatureNumber.innerHTML = Math.round(response.data.temperature.current);
   windSpeed.innerHTML = "Wind: " + Math.round(response.data.wind.speed) + "mph";
   humidityPer.innerHTML =
-    "Humidity: " + Math.round(response.data.main.humidity) + "%";
-  weatherDescript.innerHTML = response.data.weather[0].description;
-  dateTime.innerHTML = trueTime(response.data.dt * 1000);
+    "Humidity: " + Math.round(response.data.temperature.humidity) + "%";
+  weatherDescript.innerHTML = response.data.condition.description;
+  console.log(response.data.time);
+  dateTime.innerHTML = trueTime(response.data.time * 1000);
 }
 
 function search(event) {
   event.preventDefault();
-  let apiKey = "c3a3993027e6129d50f3eb164a7e386a";
+  let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
   let city = document.querySelector("#search-box").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(weatherDescription);
 }
@@ -108,9 +109,9 @@ function search(event) {
 /* */
 function convertToFarenheit(event) {
   event.preventDefault();
-  let apiKey = "c3a3993027e6129d50f3eb164a7e386a";
+  let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
   let city = document.querySelector("#search-box").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
 
   axios.get(apiUrl).then(weatherDescription);
 }
@@ -119,9 +120,9 @@ farenheitYep.addEventListener("click", convertToFarenheit);
 
 function convertToCelsius(event) {
   event.preventDefault();
-  let apiKey = "c3a3993027e6129d50f3eb164a7e386a";
+  let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
   let city = document.querySelector("#search-box").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(weatherDescription);
 }
