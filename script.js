@@ -64,6 +64,7 @@ function defaultTemperature(response) {
   weatherDescript.innerHTML = response.data.condition.description;
   console.log(response.data.time);
   dateTime.innerHTML = trueTime(response.data.time * 1000);
+  farenheitTemp = response.data.temperature.current;
 }
 
 let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
@@ -79,6 +80,7 @@ function weatherDescription(response) {
   let windSpeed = document.querySelector("#wind");
   let humidityPer = document.querySelector("#humid");
   let weatherDescript = document.querySelector("#temperature-description");
+
   cityName.innerHTML = response.data.city;
   temperatureNumber.innerHTML = Math.round(response.data.temperature.current);
   windSpeed.innerHTML = "Wind: " + Math.round(response.data.wind.speed) + "mph";
@@ -87,6 +89,7 @@ function weatherDescription(response) {
   weatherDescript.innerHTML = response.data.condition.description;
   console.log(response.data.time);
   dateTime.innerHTML = trueTime(response.data.time * 1000);
+  farenheitTemp = response.data.temperature.current;
 }
 
 function search(event) {
@@ -97,52 +100,18 @@ function search(event) {
 
   axios.get(apiUrl).then(weatherDescription);
 }
-/*
 
-
-  
-}
-
-
-//https://api.openweathermap.org/data/2.5/weather?q=new york&appid=c3a3993027e6129d50f3eb164a7e386a&units=imperial
-// TEMP CHANGE STUFF
-/* */
-function convertToFarenheit(event) {
+function celsiusConvert(event) {
   event.preventDefault();
-  let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
-  let city = document.querySelector("#search-box").value;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
-
-  axios.get(apiUrl).then(weatherDescription);
+  let temperatureDefault = document.querySelector("#temperature");
+  let celsiusTemp = ((farenheitTemp - 32) * 5) / 9;
+  temperatureDefault.innerHTML = Math.round(celsiusTemp);
 }
-let farenheitYep = document.querySelector("#farenheit");
-farenheitYep.addEventListener("click", convertToFarenheit);
 
-function convertToCelsius(event) {
-  event.preventDefault();
-  let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
-  let city = document.querySelector("#search-box").value;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+let farenheitTemp = null;
 
-  axios.get(apiUrl).then(weatherDescription);
-}
-let celsiusYep = document.querySelector("#celsius");
-celsiusYep.addEventListener("click", convertToCelsius);
+let celsiusToggle = document.querySelector("#celsius");
+celsiusToggle.addEventListener("click", celsiusConvert);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
-
-//API STUFF
-
-//let city = "New York";
-
-//function showTemperature(response) {
-//console.log(response);
-// let temperature = Math.round(response.data.main.temp);
-// let temperatureElement = document.querySelector("#temperature");
-// let description = document.querySelector("#temperature-description");
-
-// temperatureElement.innerHTML = `${temperature}°F`;
-/// description.innerHTML = response.data.weather[0].description;
-//}
-//axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);

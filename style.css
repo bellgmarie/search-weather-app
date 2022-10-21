@@ -40,6 +40,10 @@ div {
   display: block;
 }
 
+a {
+  color: #ff6201;
+}
+
 h1 {
   text-transform: capitalize;
   text-align: left;
@@ -71,7 +75,9 @@ ul {
 row {
   margin: 50px;
 }
-
+a:visited {
+  color: #ff6201;
+}
 .totalApp {
   max-width: 760px;
   margin: 60px auto;
@@ -130,6 +136,13 @@ row {
   --bs-popover-body-padding-x: 1rem;
   --bs-popover-body-padding-y: 0.5rem;
 }
+#farenheit {
+  color: #fff567;
+}
+#celsius {
+  color: #fff567;
+}
+
 #dateTime {
   color: rgb(255, 245, 103);
   font-size: 26px;
@@ -143,7 +156,7 @@ row {
   width: 110px;
   margin-left: 11px;
   cursor: pointer;
-  background: #ff690c;
+  background: rgb(255 154 92);
   margin-left: 0px;
   border-radius: -16px;
   padding: 3px 12px 3px 12px;
@@ -198,7 +211,7 @@ row {
   padding-bottom: 10px;
 }
 #temperature-description {
-  color: rgb(255, 245, 103);
+  color: rgb(255 154 92);
   text-align: center;
   margin-top: 20px;
   margin-left: -52px;
@@ -223,6 +236,12 @@ row {
 
 #search-box {
   width: 335px;
+}
+#openLink {
+  color: #ff6201;
+}
+a:hover {
+  color: blue;
 }
 #sign {
   text-align: center;
