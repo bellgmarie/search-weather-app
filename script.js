@@ -55,6 +55,7 @@ function defaultTemperature(response) {
   let humidityPer = document.querySelector("#humid");
   let weatherDescript = document.querySelector("#temperature-description");
   let dateTime = document.querySelector("#dateTime");
+  let weatherImg = document.querySelector("#image");
 
   cityName.innerHTML = response.data.city;
   temperatureNumber.innerHTML = Math.round(response.data.temperature.current);
@@ -64,14 +65,16 @@ function defaultTemperature(response) {
   weatherDescript.innerHTML = response.data.condition.description;
   console.log(response.data.time);
   dateTime.innerHTML = trueTime(response.data.time * 1000);
+  weatherImg.setAttribute(
+    "src",
+    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
+  weatherImg.setAttribute("alt", response.data.condition.description);
   farenheitTemp = response.data.temperature.current;
 }
 
 let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Tokyo&key=${apiKey}&units=imperial`;
-/* let apiKey = `c3a3993027e6129d50f3eb164a7e386a`;
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=${apiKey}`; 
-axios.get(apiUrl).then(defaultTemperature);*/
 
 // end default
 
@@ -100,7 +103,7 @@ function celsiusConvert(event) {
   temperatureDefault.innerHTML = Math.round(celsiusTemp);
 }
 
-let farenheitTemp = null;
-
 let celsiusToggle = document.querySelector("#celsius");
 celsiusToggle.addEventListener("click", celsiusConvert);
+
+let farenheitTemp = null;

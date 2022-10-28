@@ -92,12 +92,12 @@ a:visited {
   margin-top: -61px;
   margin-left: 10px;
   margin-right: 10px;
-  background: rgb(133, 149, 225)
-    radial-gradient(
-      circle,
-      rgba(133, 149, 225, 0.8911939775910365) 72%,
-      rgba(133, 174, 211, 1) 98%
-    );
+  background: rgb(133, 149, 225);
+  background: linear-gradient(
+    0deg,
+    rgba(133, 149, 225, 1) 36%,
+    rgba(133, 174, 211, 1) 85%
+  );
   box-shadow: 1px 1px 25px 20px rgba(149, 189, 255, 0.5);
 
   border: 3px solid rgb(214 223 251);
@@ -178,7 +178,7 @@ a:visited {
   font-size: 129px;
   line-height: 130px;
   margin-bottom: 0px;
-  margin-left: 87px;
+  margin-left: 33px;
 }
 #tempUnit {
   margin-top: 20px;
@@ -199,10 +199,11 @@ a:visited {
 
 #image {
   color: #ff6201;
-  width: 200px;
+  width: 279px;
   height: auto;
-  margin-top: -13px;
-  margin-left: 53px;
+  margin-top: -99px;
+  margin-bottom: -69px;
+  margin-left: -25px;
   font-size: 153px;
 }
 #topRow {
@@ -219,7 +220,7 @@ a:visited {
   color: rgb(255 154 92);
   text-align: center;
   margin-top: 10px;
-  margin-left: -50px;
+  margin-left: 4px;
   font-size: 47px;
 }
 #forecast {
