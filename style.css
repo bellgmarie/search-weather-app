@@ -60,7 +60,7 @@ h3 {
 }
 li {
   list-style: none;
-  color: rgb(255, 245, 103);
+  color: #231d3c;
   display: block;
   font-size: 25px;
   font-weight: 100px;
@@ -98,7 +98,7 @@ a:visited {
     rgba(133, 149, 225, 1) 36%,
     rgba(133, 174, 211, 1) 85%
   );
-  box-shadow: 1px 1px 25px 20px rgba(149, 189, 255, 0.5);
+  box-shadow: 0px 20px 25px 20px rgb(149 189 255 / 50%);
 
   border: 3px solid rgb(214 223 251);
   border-radius: 50px 50px 50px 50px;
@@ -145,7 +145,7 @@ a:visited {
 }
 
 #dateTime {
-  color: rgb(255, 245, 103);
+  color: #231d3c;
   font-size: 26px;
   text-align: center;
   margin-right: -182px;
@@ -158,8 +158,9 @@ a:visited {
   width: 110px;
   margin-left: 11px;
   cursor: pointer;
+  color: #231d3c;
   text-align: center;
-  background: rgb(255 154 92);
+  background-color: #fd9712;
   margin-left: 0px;
   border-radius: -16px;
   padding: 5px 30px 5px 0px;
@@ -167,12 +168,20 @@ a:visited {
 }
 
 #cityName {
-  color: #ff6201;
+  background: -webkit-linear-gradient(
+    60deg,
+    rgba(251, 201, 32, 1) 0%,
+    rgba(255, 98, 1, 1) 72%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
   margin-top: 1px;
   margin-left: 0px;
   font-size: 80px;
-  line-height: 69px;
+  line-height: 100px;
+  position: fixed auto;
+  z-index: 2;
 }
 #temperature {
   font-size: 129px;
@@ -187,7 +196,7 @@ a:visited {
   font-size: 20px;
 }
 #feelsTemp {
-  color: rgb(255, 245, 103);
+  color: #231d3c;
   font-size: 26px;
   margin-left: 168px;
   text-align: center;
@@ -217,13 +226,15 @@ a:visited {
   padding-bottom: 10px;
 }
 #temperature-description {
-  color: rgb(255 154 92);
+  color: rgb(252 153 19);
   text-align: center;
   margin-top: 10px;
   margin-left: 4px;
   font-size: 47px;
 }
 #forecast {
+  color: #231d3c;
+  background-color: #fd9712;
   margin-left: auto;
   border-radius: 15px 15px 0px 31px;
   padding: 3px 30px 3px 30px;
@@ -254,10 +265,9 @@ a:hover {
 }
 #sign {
   text-align: center;
-
-  margin-bottom: 0;
-  margin-top: 17px;
-  margin-top: 0;
-  margin-bottom: 1rem;
+  background-color: #c2caec;
+  border: 2px solid white;
+  border-radius: 19px;
+  margin: 6px 233px 0px 233px;
   display: block;
 }
