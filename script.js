@@ -57,6 +57,8 @@ function defaultTemperature(response) {
   let dateTime = document.querySelector("#dateTime");
   let weatherImg = document.querySelector("#image");
 
+  farenheitTemp = response.data.temperature.current;
+
   cityName.innerHTML = response.data.city;
   temperatureNumber.innerHTML = Math.round(response.data.temperature.current);
   windSpeed.innerHTML = "Wind: " + Math.round(response.data.wind.speed) + "mph";
@@ -89,8 +91,6 @@ function citySearch(city) {
   axios.get(apiUrl).then(defaultTemperature);
 }
 
-citySearch("Tokyo");
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
@@ -102,8 +102,18 @@ function celsiusConvert(event) {
   let celsiusTemp = ((farenheitTemp - 32) * 5) / 9;
   temperatureDefault.innerHTML = Math.round(celsiusTemp);
 }
+function farenheitConvert(event) {
+  event.preventDefault();
+  let temperatureDefault = document.querySelector("#temperature");
+  temperatureDefault.innerHTML = Math.round(farenheitTemp);
+}
+
+let farenheitTemp = null;
 
 let celsiusToggle = document.querySelector("#celsius");
 celsiusToggle.addEventListener("click", celsiusConvert);
 
-let farenheitTemp = null;
+let farenheitToggle = document.querySelector(`#farenheit`);
+farenheitToggle.addEventListener("click", farenheitConvert);
+
+citySearch("Tokyo");
