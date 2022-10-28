@@ -72,6 +72,7 @@ ul {
   margin: 0;
   padding: 0;
 }
+
 row {
   max-width: 53%;
 }
@@ -175,15 +176,15 @@ a:visited {
 }
 #temperature {
   font-size: 129px;
-  line-height: 129px;
-  margin-bottom: 26px;
-  margin-left: 10px;
+  line-height: 130px;
+  margin-bottom: 0px;
+  margin-left: 87px;
 }
 #tempUnit {
-  margin-top: 5px;
+  margin-top: 20px;
   margin-left: -24px;
-  margin-right: 36px;
-  font-size: 24px;
+  margin-right: 2px;
+  font-size: 20px;
 }
 #feelsTemp {
   color: rgb(255, 245, 103);
@@ -197,10 +198,11 @@ a:visited {
 }
 
 #image {
+  color: #ff6201;
   width: 200px;
   height: auto;
   margin-top: -13px;
-  margin-left: 6px;
+  margin-left: 53px;
   font-size: 153px;
 }
 #topRow {
@@ -216,8 +218,8 @@ a:visited {
 #temperature-description {
   color: rgb(255 154 92);
   text-align: center;
-  margin-top: 20px;
-  margin-left: -52px;
+  margin-top: 10px;
+  margin-left: -50px;
   font-size: 47px;
 }
 #forecast {

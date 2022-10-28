@@ -70,8 +70,8 @@ function defaultTemperature(response) {
 let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Tokyo&key=${apiKey}&units=imperial`;
 /* let apiKey = `c3a3993027e6129d50f3eb164a7e386a`;
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=${apiKey}`; */
-axios.get(apiUrl).then(defaultTemperature);
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=${apiKey}`; 
+axios.get(apiUrl).then(defaultTemperature);*/
 
 // end default
 
@@ -95,13 +95,22 @@ function weatherDescription(response) {
 }
 
 function search(event) {
-  event.preventDefault();
-  let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
-  let city = document.querySelector("#search-box").value;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
-
-  axios.get(apiUrl).then(weatherDescription);
+  let city = document.querySelector("#search-box");
+  citySearch(city.value);
+  console.log(city.value);
 }
+function citySearch(city) {
+  let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(defaultTemperature);
+}
+
+citySearch("Tokyo");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);
+
+////
 
 function celsiusConvert(event) {
   event.preventDefault();
@@ -114,6 +123,3 @@ let farenheitTemp = null;
 
 let celsiusToggle = document.querySelector("#celsius");
 celsiusToggle.addEventListener("click", celsiusConvert);
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
