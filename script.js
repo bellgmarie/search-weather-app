@@ -75,25 +75,6 @@ axios.get(apiUrl).then(defaultTemperature);*/
 
 // end default
 
-function weatherDescription(response) {
-  console.log(response.data.name);
-  let cityName = document.querySelector("#cityName");
-  let temperatureNumber = document.querySelector("#temperature");
-  let windSpeed = document.querySelector("#wind");
-  let humidityPer = document.querySelector("#humid");
-  let weatherDescript = document.querySelector("#temperature-description");
-
-  cityName.innerHTML = response.data.city;
-  temperatureNumber.innerHTML = Math.round(response.data.temperature.current);
-  windSpeed.innerHTML = "Wind: " + Math.round(response.data.wind.speed) + "mph";
-  humidityPer.innerHTML =
-    "Humidity: " + Math.round(response.data.temperature.humidity) + "%";
-  weatherDescript.innerHTML = response.data.condition.description;
-  console.log(response.data.time);
-  dateTime.innerHTML = trueTime(response.data.time * 1000);
-  farenheitTemp = response.data.temperature.current;
-}
-
 function search(event) {
   let city = document.querySelector("#search-box");
   citySearch(city.value);
