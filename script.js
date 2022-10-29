@@ -74,10 +74,10 @@ function defaultTemperature(response) {
   weatherImg.setAttribute("alt", response.data.condition.description);
   farenheitTemp = response.data.temperature.current;
 }
-/*
+
 let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Tokyo&key=${apiKey}&units=imperial`;
-*/
+
 // end default
 
 function search(event) {
@@ -99,7 +99,7 @@ form.addEventListener("submit", search);
 function celsiusConvert(event) {
   event.preventDefault();
   let temperatureDefault = document.querySelector("#temperature");
-  //remove active class and make inactive from farenheit link
+
   farenheitToggle.classList.remove("active");
   celsiusToggle.classList.add("active");
   let celsiusTemp = ((farenheitTemp - 32) * 5) / 9;
