@@ -4,9 +4,6 @@ function trueTime(timestamp) {
   let date = new Date(timestamp);
   let dates = date.getDate();
   let hour = date.getHours();
-  if (hour > 12) {
-    hour = hour - 12;
-  }
 
   let minutes = date.getMinutes();
   if (minutes < 10) {
@@ -66,7 +63,7 @@ function defaultTemperature(response) {
     "Humidity: " + Math.round(response.data.temperature.humidity) + "%";
   weatherDescript.innerHTML = response.data.condition.description;
   console.log(response.data.time);
-  dateTime.innerHTML = trueTime(response.data.time * 1000);
+  dateTime.innerHTML = trueTime(response.data.time);
   weatherImg.setAttribute(
     "src",
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
