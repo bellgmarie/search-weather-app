@@ -72,15 +72,11 @@ function defaultTemperature(response) {
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   weatherImg.setAttribute("alt", response.data.condition.description);
-  farenheitTemp = response.data.temperature.current;
 }
-
-let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Tokyo&key=${apiKey}&units=imperial`;
-
 // end default
 
 function search(event) {
+  event.preventDefault();
   let city = document.querySelector("#search-box");
   citySearch(city.value);
   console.log(city.value);
@@ -90,10 +86,6 @@ function citySearch(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(defaultTemperature);
 }
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
-
 ////
 
 function celsiusConvert(event) {
@@ -113,6 +105,9 @@ function farenheitConvert(event) {
   temperatureDefault.innerHTML = Math.round(farenheitTemp);
 }
 
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);
+
 let farenheitTemp = null;
 
 let celsiusToggle = document.querySelector("#celsius");
@@ -120,5 +115,8 @@ celsiusToggle.addEventListener("click", celsiusConvert);
 
 let farenheitToggle = document.querySelector(`#farenheit`);
 farenheitToggle.addEventListener("click", farenheitConvert);
+
+let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Tokyo&key=${apiKey}&units=imperial`;
 
 citySearch("Tokyo");

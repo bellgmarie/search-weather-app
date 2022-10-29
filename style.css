@@ -238,9 +238,11 @@ a:hover {
 #temperature-description {
   color: rgb(252 153 19);
   text-align: center;
-  margin-top: 10px;
-  margin-left: 4px;
-  font-size: 47px;
+  margin-top: -114px;
+  margin-left: 428px;
+  width: 39%;
+  font-size: 32px;
+  text-align: right;
 }
 #forecast {
   color: #231d3c;
