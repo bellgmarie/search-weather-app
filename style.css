@@ -40,10 +40,6 @@ div {
   display: block;
 }
 
-a {
-  color: #ff6201;
-}
-
 h1 {
   text-transform: capitalize;
   text-align: left;
@@ -76,9 +72,7 @@ ul {
 row {
   max-width: 53%;
 }
-a:visited {
-  color: #ff6201;
-}
+
 .totalApp {
   max-width: 760px;
   margin: 60px auto;
@@ -129,20 +123,36 @@ a:visited {
   display: inline;
 }
 
-.custom-popover {
-  --bs-popover-max-width: 200px;
-  --bs-popover-border-color: var(--bs-primary);
-  --bs-popover-header-bg: var(--bs-primary);
-  --bs-popover-header-color: var(--bs-white);
-  --bs-popover-body-padding-x: 1rem;
-  --bs-popover-body-padding-y: 0.5rem;
+.openLink {
+  text-decoration: none;
+  color: white;
 }
+.openLink:hover {
+  text-decoration: underline;
+  color: #fe6e04;
+}
+a {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+a:hover {
+  color: #ced4da;
+  text-decoration: underline;
+}
+.won-der .active {
+  text-decoration: none;
+  color: #231d3c;
+  cursor: default;
+}
+
+/*
 #farenheit {
   color: #fff567;
 }
 #celsius {
   color: #fff567;
 }
+*/
 
 #dateTime {
   color: #231d3c;
@@ -257,12 +267,7 @@ a:visited {
 #search-box {
   width: 335px;
 }
-#openLink {
-  color: #ff6201;
-}
-a:hover {
-  color: blue;
-}
+
 #sign {
   text-align: center;
   background-color: #c2caec;
