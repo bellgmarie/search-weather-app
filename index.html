@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>11Weather</title>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -24,8 +25,8 @@
         <div class="row won-der" id="middleRow">
           
           <h2 class="col-3">
-             <img id="image" alt="Clear" 
-             src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"></img>
+             <img id="image" alt="-" 
+             src="#"></img>
             
           <h2 class="col-3 " id="temperature"> -</h2>
           <span class="col-2 " id="tempUnit" >
@@ -38,8 +39,8 @@
        <div class="row" id="topRow">
          
           <span class="col-3" > 
-            <h3 id="dateTime">10:45 PM <br/> Aug. 23rd
-            <br />Sunday</h3>
+            <h3 id="dateTime">--- <br/> -----
+            <br />----</h3>
             
           </span>
           <span class="col-9" id="weatherAcc"> <ul id="feelsTemp">
@@ -53,10 +54,9 @@
        <div class="row" id="lastRow">
         
         
-        
+       
            
-          <button id="forecast"   class="col-2">Forecast</button>
-            
+          <button id="forecast"   class="col-2" >Forecast</button>
           
           <form id="search-form" > 
           <input
@@ -73,8 +73,28 @@
           
         
       </div>
-     </div> <p id="sign"> <a href="https://github.com/bellgmarie/search-weather-app" target="_blank" class="openLink">Open-source code</a> by Bell M</p>
+
+
+
+     </div> 
     </div>
+    
+    
+    <div  id="finalRow"> 
+  <div class="row forecastDays">
+
+
+  <div class="col-2 each" >
+    <div class="forecast-date">
+   Tue</div>
+      <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" 
+      alt="" width="80px">
+      <div class="forecast-temp">
+      <span class="forecast-max">18°</span> / <span class="forecast-min">16°</span>
+  </div>
+</div>
+</div>
+</div><p id="sign"> <a href="https://github.com/bellgmarie/search-weather-app" target="_blank" class="openLink">Open-source code</a> by Bell M</p>
   </div>
     <script src="script.js"></script>
   </body>

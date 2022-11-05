@@ -86,7 +86,7 @@ row {
   margin-right: 10px;
   background: rgb(133, 149, 225);
   background: linear-gradient(
-    0deg,
+    180deg,
     rgba(133, 149, 225, 1) 36%,
     rgba(133, 174, 211, 1) 85%
   );
@@ -143,6 +143,31 @@ a:hover {
   cursor: default;
 }
 
+.forecastDays {
+  margin-top: 1px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+.each {
+  background-color: rgb(145 184 237 / 72%);
+  margin-left: 20px;
+  border-radius: 20px;
+}
+.forecast-date {
+  margin-top: 3px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #231d3c;
+}
+.forecast-temp {
+  font-size: 17px;
+  top: -13;
+  color: #231d3c;
+}
+
+.forecast-min {
+  opacity: 0.4;
+}
 /*
 #farenheit {
   color: #fff567;
@@ -166,9 +191,9 @@ a:hover {
   border-radius: 15px 15px 0px 31px;
   border: 4px solid rgba(149, 189, 255, 0.5);
   color: #ffffff;
-  background-color: #fd9712;
+
   outline: none;
-  background-color: transparent;
+  background-color: #95c5f1ba;
   margin-left: auto;
   padding: 3px 30px 3px 30px;
 }
@@ -187,7 +212,7 @@ a:hover {
   cursor: pointer;
   color: #ffffff;
   text-align: center;
-  background-color: transparent;
+  background-color: #95c5f1ba;
   margin-left: 0px;
   border-radius: -16px;
   padding: 5px 30px 5px 0px;
@@ -247,9 +272,11 @@ a:hover {
   font-size: 153px;
 }
 #topRow {
-  border: 1px solid rgba(149, 189, 255, 0.5);
-  background-color: rgba(149, 189, 255, 0.5);
+  border: 1px solid rgb(149 189 255 / 0%);
+  background-color: rgb(145 184 237 / 72%);
   margin-bottom: 17px;
+  margin-right: 41px;
+  margin-left: 41px;
   border-radius: 41px;
 }
 #middleRow {
@@ -283,7 +310,23 @@ a:hover {
 #search-box {
   width: 335px;
 }
+#finalRow {
+  max-width: 760px;
+  padding: 20px 20px 3px 20px;
+  margin-top: -54px;
+  margin-left: 28px;
+  margin-right: 28px;
+  background: rgb(133, 149, 225);
+  background: linear-gradient(
+    180deg,
+    rgba(133, 174, 211, 1) 8%,
+    rgba(133, 149, 225, 1) 58%
+  );
+  box-shadow: 0px 20px 25px 20px rgb(149 189 255 / 25%);
 
+  border: 3px solid rgb(214 223 251);
+  border-radius: 50px 50px 50px 50px;
+}
 #sign {
   text-align: center;
   background-color: #c2caec;
