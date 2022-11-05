@@ -85,7 +85,36 @@ function citySearch(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(defaultTemperature);
 }
-////
+
+function displayForecasts() {
+  let forecastElement = document.querySelector("#weather-forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thur", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2 each">
+
+    <div class="forecast-date">
+   ${day}</div>
+
+      <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" 
+      alt="" width="80px">
+
+      <div class="forecast-temp">
+
+      <span class="forecast-max">18°</span> /
+      <span class="forecast-min">16°</span>
+  </div>
+</div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
 
 function celsiusConvert(event) {
   event.preventDefault();
@@ -119,3 +148,14 @@ let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Tokyo&key=${apiKey}&units=imperial`;
 
 citySearch("Tokyo");
+displayForecasts();
+/*
+<div class="col-2 each" >
+    <div class="forecast-date">
+   Tue</div>
+      <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" 
+      alt="" width="80px">
+      <div class="forecast-temp">
+      <span class="forecast-max">18°</span> / <span class="forecast-min">16°</span>
+  </div>
+</div> */
