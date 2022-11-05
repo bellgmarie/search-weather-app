@@ -47,7 +47,6 @@ function trueTime(timestamp) {
 //SEARCH STUFF
 
 function defaultTemperature(response) {
-  console.log(response.data);
   let cityName = document.querySelector("#cityName");
   let temperatureNumber = document.querySelector("#temperature");
   let windSpeed = document.querySelector("#wind");
@@ -64,13 +63,15 @@ function defaultTemperature(response) {
   humidityPer.innerHTML =
     "Humidity: " + Math.round(response.data.temperature.humidity) + "%";
   weatherDescript.innerHTML = response.data.condition.description;
-  console.log(response.data.time);
+
   dateTime.innerHTML = trueTime(response.data.time * 1000);
   weatherImg.setAttribute(
     "src",
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   weatherImg.setAttribute("alt", response.data.condition.description);
+
+  getForecast(response.data.coordinates);
 }
 // end default
 
@@ -86,7 +87,17 @@ function citySearch(city) {
   axios.get(apiUrl).then(defaultTemperature);
 }
 
-function displayForecasts() {
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
+  let apiUrls = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=imperial`;
+
+  axios.get(apiUrls).then(displayForecasts);
+  console.log(apiUrls);
+}
+
+function displayForecasts(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#weather-forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -113,7 +124,6 @@ function displayForecasts() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 
 function celsiusConvert(event) {
@@ -158,4 +168,7 @@ displayForecasts();
       <div class="forecast-temp">
       <span class="forecast-max">18°</span> / <span class="forecast-min">16°</span>
   </div>
-</div> */
+</div> 
+https://api.shecodes.io/weather/v1/current?query=Tokyo&key=f0fc91db3aoa04a9t8419fe6b4378f88&units=imperial 
+
+*/
